@@ -6,7 +6,7 @@
   "scripts": {
     "predeploy": "cd frontend && npm run build && cd .. && type nul > frontend/out/.nojekyll",
     "deploy": "gh-pages -d out -t true",
-    "dev": "next dev",
+    "dev": "node frontend/server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +16,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "express": "^4.21.1",
     "framer-motion": "^11.8.0",
     "lucide-react": "^0.445.0",
     "next": "14.2.13",

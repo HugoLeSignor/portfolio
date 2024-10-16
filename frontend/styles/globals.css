@@ -51,6 +51,17 @@
 }
 
 @layer base {
+  html, body {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
   * {
     @apply border-border;
   }
@@ -97,18 +108,27 @@
 }
 
 @layer utilities {
-  /* Styles pour la résolution tablette (768px) */
-  @media (min-width: 768px) and (max-width: 1279px) {
-    .custom-768 .iframe-container {
-      height: 400px; /* Hauteur fixe pour l'iframe sur tablette */
+  /* Remove any media queries that restrict scrolling */
+  /* Remove or modify these styles if they exist */
+  /*
+  @media (max-width: 500px) {
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #__next {
+      height: 100vh;
+      overflow: hidden;
     }
   }
+  */
 
-  /* Styles pour la résolution mobile (375px) */
-  @media (max-width: 767px) {
-    .custom-375 .iframe-container {
-      height: 300px; /* Hauteur fixe pour l'iframe sur mobile */
-    }
+  /* Ensure content is scrollable on all screen sizes */
+  .scrollable-content {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

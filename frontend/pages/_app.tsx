@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import '../components/ShootingStarsBackground.css';
 import type { AppProps } from "next/app";
 import { Inter, Montserrat } from 'next/font/google';
 
@@ -18,4 +19,3 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
